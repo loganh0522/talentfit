@@ -1,6 +1,21 @@
 Rails.application.routes.draw do
+  root to: "welcome#index"
+  get "welcome/price"
+  get "welcome/features"
+  get "welcome/faq"
+  get "welcome/contact"
+  get "welcome/login"
+  get "welcome/signup"
+  
+  
   resources :job_templates
-
+  get 'backend' => "job_templates#index"
+  #get 'backend' => "job_templates#show"
+  #get 'backend' => "job_templates#edit"
+  #get 'backend' => "job_templates#new"
+  #get 'backend' => "job_templates#create"
+  #get 'backend' => "job_templates#update"
+  #get 'backend' => "job_templates#destroy"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
