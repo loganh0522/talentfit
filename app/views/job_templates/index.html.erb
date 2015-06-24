@@ -1,30 +1,35 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Job Templates</h1>
+<div class = "media">
+  <div class = "media-body">
+    <table class = "table table-hover">
+      <thead>
+        <tr>
+          <th>Template Name</th>
+          <th>Date Created </th>
+          <th>Job Description</th>
+          <th>Job Type</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Template name</th>
-      <th>Job description</th>
-      <th>Job type</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @job_templates.each do |job_template| %>
-      <tr>
-        <td><%= job_template.template_name %></td>
-        <td><%= job_template.job_description %></td>
-        <td><%= job_template.job_type %></td>
-        <td><%= link_to 'Show', job_template %></td>
-        <td><%= link_to 'Edit', edit_job_template_path(job_template) %></td>
-        <td><%= link_to 'Destroy', job_template, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @job_templates.each do |job_template| %>
+          <tr>        
+            <td><%= job_template.template_name %></td>
+            <td><%= job_template.created_at.strftime("%Y-%d-%m") %></td>
+            <td><%= job_template.job_description %></td>
+            <td><%= job_template.job_type %></td>
+            <td><%= link_to 'Show', job_template, class: "btn btn-mini" %></td>
+            <td><%= link_to 'Edit', edit_job_template_path(job_template), class: "btn btn-mini btn-success" %></td>
+            <td><%= link_to 'Destroy', job_template, method: :delete, class: "btn btn-mini btn-danger", data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <br>
 
