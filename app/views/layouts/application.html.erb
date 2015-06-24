@@ -7,13 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= link_to "Home", root_path %>
-  <%= link_to "Jobs", root_path %>
-  <%= link_to "Applicants", root_path %>
-  <%= link_to "Templates", root_path %>
-  <%= link_to "Company Structure", root_path %>
-
+<div class = "container">
+  <ul class = "nav nav-tabs">
+    <li><%= link_to "Home", root_path %></li>
+    <li><%= link_to "Jobs", root_path %></li>
+    <li><%= link_to "Applicants", root_path %></li>
+    <li><%= link_to "Templates", root_path %></li>
+    <li><%= link_to "Company Structure", root_path %></li>
+  </ul>
 <%= yield %>
-
+</div>
 </body>
 </html>
