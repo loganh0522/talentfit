@@ -4,7 +4,8 @@ class JobTemplatesController < ApplicationController
   # GET /job_templates
   # GET /job_templates.json
   def index
-    @job_templates = JobTemplate.all
+    @search = JobtempSearch.new(params[:search])
+    @job_templates = @search.scope
   end
 
   # GET /job_templates/1
