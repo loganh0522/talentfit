@@ -14,8 +14,14 @@
       <li> <%= link_to "Pricing", welcome_price_path %></li>
       <li> <%= link_to "Faq", welcome_faq_path %></li>
       <li> <%= link_to "Contact", welcome_contact_path %></li>
-      <li> <%= link_to "Sign Up", welcome_signup_path %></li>
-      <li> <%= link_to "Login", welcome_login_path %></li>
+      
+    <% if current_user %> 
+    <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+    <% else %> 
+      <li> <%= link_to "Sign Up", new_user_registration_path %></li>
+      <li> <%= link_to "Login", new_user_session_path %></li>
+    <% end %> 
+    
   </ul> 
 
   <p class = "notice"><%= notice %></p>

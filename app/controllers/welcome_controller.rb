@@ -1,5 +1,4 @@
 class WelcomeController < ApplicationController
-  layout "front"
   
   def index
   end
